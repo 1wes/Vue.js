@@ -2,7 +2,7 @@
   "name": "first_vue_app",
   "version": "0.1.0",
   "private": true,
-  "main": "main.html",
+  "main": "index.html",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
