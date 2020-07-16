@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue components</title>
+    <script src="vue/vue.js"></script>
+</head>
+<body>
+    <div id="comp_test1">
+        <testcomp>
+
+        </testcomp>
+    </div>
+
+    <div id="comp_test2">
+        <component2>
+
+        </component2>
+    </div>
+
+
+    <script>
+    
+    // component global registration-- the component is initialzed outside the vue instance
+    Vue.component('testcomp',{
+
+        // create a template
+        template:'<div><h3>This is a component example</h3></div>'
+    });
+
+    Vue.component('component2',{
+
+        template:'<div><h3>This is component 2</h3></div>'
+    })
+
+    var vm1=new Vue({
+
+        el:'#comp_test1',
+
+    })
+
+    var vm2=new Vue({
+
+        el:"#comp_test2"
+    });
+
+
+    </script>
+</body>
+</html>
