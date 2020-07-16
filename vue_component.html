@@ -19,6 +19,12 @@
         </component2>
     </div>
 
+    <div id="localComp">
+        <localcomponent>
+
+        </localcomponent>
+    </div>
+
 
     <script>
     
@@ -44,6 +50,26 @@
 
         el:"#comp_test2"
     });
+
+    // local component
+    var vm3=new Vue({
+
+        el:'#localComp',
+
+        // component:Vue.component('localcomponent',{
+
+        //     template:'<div><h4>This is local component </h4></div>'
+        // })
+
+        // or
+        components:{
+
+            'localcomponent':{
+
+                template:'<div><h4>This is a local component </h4></div>'                
+            }
+        }
+    })
 
 
     </script>
