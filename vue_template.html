@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue template</title>
+    <script src="vue/vue.js"></script>
+</head>
+<body>
+
+    <div id="userLogin">
+        <h1>{{ Username }}</h1>
+
+        <h2>{{ Password }}</h2>
+
+        <!-- bind the the image url to the src attr using v-bind -->
+        <img v-bind:src="imgsrc" v-bind:alt="alt" width="80%" height="auto">
+    
+        <!-- use the v-html directive to create templates -->
+        <div v-html="Login"></div>
+    </div>
+
+    <script>
+        var ins=new Vue({
+
+            el:'#userLogin',
+
+            data:{
+
+                Username:"Wesley",
+
+                Password:"Mickeyyyy",
+
+                Login:'<div><h3>Login was successful</h3></div>',
+
+                imgsrc:'images/career.png',
+
+                alt:"there is a career image here"
+            }
+        })
+    </script>
+</body>
+</html>
