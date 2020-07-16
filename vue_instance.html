@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue instances</title>
+    <script src="vue/vue.js"></script>
+</head>
+<body>
+    <div id="vue_inst">
+        <h1>Firstname: {{ firstname }}</h1>
+        <h1>Lastname: {{ lastname }}</h1>
+        <h1>{{ myDetails }}</h1>
+    </div>
+
+    <div>
+
+    </div>
+    <!-- constructor options -->
+
+    <!-- the data option--can be an object or function -->
+    <script>
+        var obj={
+
+            fname:'Wesley',
+
+            lname:'Okemshi'
+        }
+
+        var vi=new Vue({
+
+            data:{obj},
+
+            method:{
+
+                myDetails:()=>{
+
+                    return "That makes me "+fname+" "+lname;
+                }
+            }
+        })
+
+        console.log("My name is "+obj.fname+" "+obj.lname);
+    </script>
+    
+    <!-- using a component -->
+    <script>
+
+        var names={
+
+            firstname:"Ranjeet",
+
+            lastname:'Misha'
+        }
+
+        var component=Vue.extend({
+
+            data:()=>{
+
+                return names
+            }
+        });
+
+        var newComp=new component();
+
+        // fetching the details
+        console.log(newComp.$data);
+
+        
+    </script>
+    <!-- using a component -->
+
+    <!-- the data option--can be an object or function -->
+
+    <!-- method -->
+    <script>
+
+        // var userInfo={
+
+        //     name:'rachel',
+
+        //     age:'19'
+        // }
+
+        var newIn=new Vue({
+
+            data:{a:5},
+
+            method:{
+
+                asquare:()=>{
+
+                    this.a *=this.a;
+                }
+            }
+        })
+        newIn.asquare()
+        
+        console.log(newIn.a*a);
+    </script>
+    <!-- method -->
+
+
+
+    <!-- constructor options -->
+
+</body>
+<script src="vue_instance.js"></script>
+</html>
