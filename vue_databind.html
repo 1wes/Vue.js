@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data binding</title>
+    <script src="vue/vue.js"></script>
+    <style>
+        .active{
+
+            background-color: yellow;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="datab">
+        <a v-bind:href="href" :target="target" > <h3 style="text-align: center; font-size: 30px;">{{ link }}</h3> </a>
+
+        <!-- binding a class using :class="{className:property}" -->
+        <div :class="{active:isactive}">Am yellow(ish)</div>
+
+        <!-- inline style binding -->
+        <div :style="{color:Color, fontSize:Font}">{{ text }}</div>
+
+        <!-- using an object for binding -->
+        <div :style="styleobj">{{ message }}</div>
+
+        <!-- form input binding using v-model -->
+        <br>
+        <hr>
+        <br>
+
+        <h2>Fill in the following please</h2>
+
+        <input type="text" v-model="bookname" placeholder="Enter book name">
+        <h4 >The name entered is <span :style="spanStyle">{{bookname}}</span></h4>
+
+        <h3>Add message</h3>
+        <textarea name="" id="" cols="30" rows="10" v-model="moreinfo"></textarea>
+        <p :style="pStyle">{{moreinfo}}</p>
+
+        
+        <h3>Checkbox</h3>
+        <input type="checkbox" id="checkbox" v-model="checked">{{checked}}
+
+        <!-- modifiers -->
+        <!-- v-model.number-- ensures only data type of number-- -->
+        <!-- v-model.lazy-- ensures input is presented after full input and user has left input area -->
+        <!-- v-model.trim--removes space enterd at the beginning and end of input -->
+        <!-- modifiers -->
+
+
+    </div>
+
+
+    <script>
+        var vm=new Vue({
+
+            el:'#datab',
+
+            data:{
+                link:"Click me please",
+
+                href:"https://google.com",
+
+                target:"_blank",
+
+                isactive:true,
+
+                Color:'red',
+
+                Font:'30px',
+
+                text:"Inline binding",
+
+                styleobj:{
+
+                    color:'pink',
+
+                    fontSize:'40px',
+
+                    textDecoration:'strike-through'
+                },
+
+                message:'Styled by an object bound in style',
+
+                bookname:'',
+
+                spanStyle:{
+
+                    color:'magenta',
+
+                    fontSize:'35px'
+                },
+
+                pStyle:{
+
+                    color:'cyan',
+
+                    fontSize:'25px'
+                },
+
+                moreinfo:'',
+
+                checked:false
+            }
+        });
+    </script>
+
+
+</body>
+</html>
