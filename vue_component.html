@@ -25,6 +25,21 @@
         </localcomponent>
     </div>
 
+    <!-- adding methods and data -->
+    <div id="dnm">
+        <div>
+            <dnmcomp>
+    
+            </dnmcomp>
+        </div>
+    
+        <div>
+            <dnmcomp>
+    
+            </dnmcomp>
+        </div>
+    </div>
+
 
     <script>
     
@@ -71,6 +86,37 @@
         }
     })
 
+    // adding data and methods
+    Vue.component('dnmcomp', {
+
+        template:'<div v-on:mouseover="changename()" v-on:mouseout="originalname();"><h1>This component was created by <span id="name">{{ name }}</span></h1></div>',
+
+        data:()=>{
+
+            return {
+
+                name:'Wes'
+            }
+        },
+
+        methods:{
+
+            changename:()=>{
+
+                this.name="Okemshi"
+            },
+
+            originalname:()=>{
+
+                this.name='Wes'
+            }
+        }
+    });
+
+    var vm4=new Vue({
+
+        el:'#dnm'
+    })
 
     </script>
 </body>
