@@ -40,6 +40,25 @@
         </div>
     </div>
 
+    <!-- dynamic components -->
+    <div id="dcomp">
+        <component v-bind:is="view">
+
+        </component>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <script>
     
@@ -116,6 +135,25 @@
     var vm4=new Vue({
 
         el:'#dnm'
+    })
+
+    // dynamic local component
+    var vmx=new Vue({
+
+        el:'#dcomp',
+
+        data:{
+
+            view:'dynacomp'
+        },
+
+        components:{
+
+            'dynacomp':{
+
+                template:'<div style="background-color:gray; font-size:30px; color:maroon;"><h2>this is a dynamic component</h2></div>'
+            }
+        }
     })
 
     </script>
