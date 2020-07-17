@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch property</title>
+    <script src="vue/vue.js"></script>
+</head>
+<body>
+    <div id="compwatch">
+        Kilometres: <input type="text" v-model="kilometres">
+        Metres: <input type="text" v-model="metres">
+    </div>
+
+
+    <script>
+        var vm=new Vue({
+
+            el:'#compwatch',
+
+            data:{
+
+                kilometres:0,
+
+                metres:0
+            },
+
+            methods:{
+
+            },
+
+            computed:{
+
+            },
+
+            watch:{
+
+                kilometres:function(val){
+
+                    kilometres=val;
+
+                    this.metres=kilometres*1000;
+                },
+
+                metres:function(val){
+
+                    metres=val;
+
+                    this.kilometres=metres/1000;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
